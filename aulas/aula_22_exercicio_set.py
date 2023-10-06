@@ -7,7 +7,8 @@ while x==True:
     else:
         estado.add(resp)
 
-print(estado)
-for i in estado:
+print(estado) 
+
+for i in estado:#loop para percorrer o set em busca do elemento que atenda condição
     if len(i)>4:
         print(i)
