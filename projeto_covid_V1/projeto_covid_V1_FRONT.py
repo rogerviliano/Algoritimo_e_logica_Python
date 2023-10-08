@@ -1,5 +1,5 @@
 import random
-from projeto_covid_V1_BACK import relatorios,cad_cidadao,cad_perguntas,listar_cidadaos,listar_perguntas,cad_saudacoes,listar_saudacoes
+from projeto_covid_V1_BACK import diagnostico,relatorios,cad_cidadao,cad_perguntas,listar_cidadaos,listar_perguntas,cad_saudacoes,listar_saudacoes
 
 
 
@@ -40,7 +40,7 @@ def menu(tupla_cidadao,list_perguntas,lista_saudacoes):
     print("BEM VINDO - ESCOLHA A OPÇÃO ABAIXO")
     menu=True
     while menu!=False:
-        resp=int(input("[1]CADASTRAR [2]LISTAR [3]Relatórios [4]Iniciar Entrevista [5]Sair "))
+        resp=int(input("[1]CADASTRAR [2]LISTAR [3]Relatórios [4]Iniciar Entrevista [5]Diagnostico [6]Sair "))
         if resp==1:
             resp2=int(input("[1]Cadastrar Cidadão [2]Cadastrar Perguntas Sintomas [3]Casdastrar Saudações"))
             if resp2==1:
@@ -62,5 +62,7 @@ def menu(tupla_cidadao,list_perguntas,lista_saudacoes):
         if resp==4:
             menu=False
         if resp==5:
+            diagnostico(tupla_cidadao,list_perguntas)
+        if resp==6:
             exit()
     return 

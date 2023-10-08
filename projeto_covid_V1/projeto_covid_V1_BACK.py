@@ -157,8 +157,13 @@ def cad_cidadao(tupla_cidadao):
     n_cidadao=int(input("Quantos cidadãos deseja cadastrar:\n"))
     x=1
     while x <= n_cidadao:
-        print("Digite o nome do cidadão n°",x)
-        cidadao=input()
+        print("Digite o nome do cidadão n°\n",x)
+        nome=input()
+        cpf=""
+        while len(cpf)<11:
+            print("Digite seu CPF:\n")
+            cpf=input()
+        cidadao=nome+"|"+cpf
         tupla_cidadao[0].append(cidadao)
         x+=1
     return
@@ -209,5 +214,19 @@ def listar_saudacoes(lista_saudacoes):
     return
 
 
+def diagnostico(tupla_cidadao,list_perguntas):
+    print("Digite o CPF do Cidadão para saber o diagnostico:")  
+    cpf=input()
+    i=(-1)
+    lista=tupla_cidadao[0]
+    print(lista)
+    i=0
+    for cpf_ in lista:
+        cpf_2=cpf_.split("|")
+        if cpf_2[1]==cpf:
+            print(tupla_cidadao[0][i])
+        i+=1
 
+
+    return
 
