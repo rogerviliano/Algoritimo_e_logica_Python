@@ -215,17 +215,20 @@ def listar_saudacoes(lista_saudacoes):
 
 
 def diagnostico(tupla_cidadao,list_perguntas):
-    print("Digite o CPF do Cidadão para saber o diagnostico:")  
-    cpf=input()
-    i=(-1)
-    lista=tupla_cidadao[0]
-    print(lista)
-    i=0
-    for cpf_ in lista:
-        cpf_2=cpf_.split("|")
-        if cpf_2[1]==cpf:
-            print(tupla_cidadao[0][i])
-        i+=1
+    if tupla_cidadao[0]==[]:
+        print("Lista Vazia")
+      
+    else:
+        print("Digite o CPF do Cidadão para saber o diagnostico:")  
+        cpf=input()
+        i=(-1)
+        lista=tupla_cidadao[0]
+        i=0
+        for cpf_ in lista:
+            cpf_2=cpf_.split("|")
+            if cpf_2[1]==cpf:
+                print(tupla_cidadao[0][i])
+            i+=1
 
 
     return
