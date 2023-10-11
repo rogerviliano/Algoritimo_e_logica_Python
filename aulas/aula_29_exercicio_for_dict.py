@@ -14,3 +14,10 @@ for y in dict_alunos: #y recebe 'key'
     xx=dict_alunos.get(y)#xx armazerna 'value' de y
     print(xx) #exibe valor de xx
 print(len(dict_alunos))#comprimento do dicionario
+
+dict_alunos.pop("Convidado")#remove elemento pela chave Convidado 
+print(dict_alunos)
+
+ff="Colega"
+dict_alunos.pop(ff)
+print(dict_alunos) #tambem pode ser passado por variavel
