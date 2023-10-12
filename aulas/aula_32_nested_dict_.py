@@ -18,6 +18,6 @@ r="Centro-oeste"
 est="Goias"
 cap="Goiânia"
 
-brasil[r][est]={cap}
+brasil[r][est]={cap} 
 print(brasil)
 print(len(brasil))
