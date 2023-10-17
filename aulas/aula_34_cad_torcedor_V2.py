@@ -7,17 +7,31 @@ def cadastrar(dicionario):
         cpf=int(input())
         dicionario[cpf]={}
         print(">>> Nome:\n")
-        nome=input()
+        nome=input().upper()
         dicionario[cpf]["Nome:"]=nome
         print(">>> Idade:\n")
         nome=input()
         dicionario[cpf]["Idade:"]=nome
-        print(">>> Time:\n")
+        print(">>> Sexo:\n")
         nome=input()
-        dicionario[cpf]["Time:"]=nome
+        dicionario[cpf]["Sexo:"]=nome
         x+=1
 
-def listar(dicionario):
+def relatorio(dicionario):
+    sexo=[]
+    adultos=[]
+    adolescentes=[]
+    homem=[]
+    mulheres=[]
+    for k in dicionario:
+        dic=dicionario.get(k)
+        for sk in dic:
+            if sk=="Sexo:" and dic.get(sk)=="f":
+                info=str(k)+"-"+dic.get("Nome:")
+                sexo.append(info)
+    print(sexo)
+
+
     print(dicionario)
     return
 
@@ -30,7 +44,7 @@ cad_torcedor={}
 
 x=99
 while x==99:
-    print("[1]Cadastrar [2]Listar [3]Editar [4]Sair")
+    print("[1]Cadastrar [2]Relatórios [3]Editar [4]Sair")
     opcao=int(input())
     if opcao < 1 or opcao > 4:
         print("opção invalida")
@@ -38,7 +52,7 @@ while x==99:
         if opcao ==1:
             cadastrar(cad_torcedor)
         if opcao == 2:
-            listar(cad_torcedor)
+            relatorio(cad_torcedor)
         if opcao == 3:
             editar(cad_torcedor)
         if opcao == 4:
